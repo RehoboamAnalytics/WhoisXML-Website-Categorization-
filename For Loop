@@ -1,3 +1,6 @@
+base<-'https://website-categorization.whoisxmlapi.com/api/v2?apiKey="api key"='
+websites<-c('cnn.com','espn.com','sherdog.com')
+
 for(i in 1:length(websites)){
   API_URL <- paste0(base,websites[i])
   raw_data<-GET(API_URL)
