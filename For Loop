@@ -1,0 +1,9 @@
+for(i in 1:length(websites)){
+  API_URL <- paste0(base,websites[i])
+  raw_data<-GET(API_URL)
+  raw_object<- jsonlite::fromJSON(rawToChar(raw_data$content),flatten=TRUE)
+  df<-raw_object$categories$tier2.name
+  final<-df[[1]]
+  print(final)
+  
+}
